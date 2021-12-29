@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<div class="section-body">
+    <div class="text-center row">
+        <div class="wrapper">
+            <div class="alarm" onclick="onclickBell()">
+                <div class="light">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="bulb">
+                </div>
+                <div class="base"></div>
+            </div>
+        </div>
+        <div class="box" onclick="onclickBell()">
+            <i class="fas fa-bell"></i>
+        </div>
+    </div>
+</div>*@
+<div class="section-body">
+    <div class="text-center row">
+        <div class="col-xl-4 col-lg-4 col-md-4">
+            <div class="card-body text-center">
+                <div class="box">
+                    <div class="alarm" onclick="onclickBell()">
+                        <div class="light">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="bulb">
+                        </div>
+                        <div class="base"></div>
+                    </div>
+
+                </div>
+                <h6 class="mt-3 mb-0">Đèn Cảnh Báo</h6>
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4">
+            <div class="card-body text-center">
+                <div class="box">
+                    <i class="fas fa-bell" onclick="onclickBell()"></i>
+                    <h6 class="mt-3 mb-0">Chuông cảnh báo</h6>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-4">
+            <div class="card-body text-center">
+                <div class="box">
+                    <i class="fas fa-exclamation-triangle" onclick="onclickBell()"></i>
+                    <h6 class="mt-3 mb-0"># Khác</h6>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<script>
+    function onclickBell() {
+        $.ajax({
+            type: "POST",
+            data: "",
+            url: "/Home/GetAllJson",
+            success: function (data) {
+                console.log("get Json success")
+                console.log(data)
+            },
+            error: function (data) {
+            }
+        })
+    }
+</script>
